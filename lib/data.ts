@@ -37,7 +37,7 @@ export const experiencesData = [
   {
     title: 'Graduated from full stack course with PHP and JavaScript',
     location: 'Cairo',
-
+    description: '',
     icon: React.createElement(LuGraduationCap),
     date: 'Jan 2020 - Aug 2020',
   },
@@ -52,7 +52,8 @@ export const experiencesData = [
   {
     title: 'Front-End Developer in Gemini Media',
     location: 'Cairo',
-    description: 'Current working as front-end developer building internal and out-source projects',
+    description:
+      'Current working as front-end developer building internal and out-source projects',
     icon: React.createElement(CgWorkAlt),
     date: 'Sep 2022 - Present',
   },
