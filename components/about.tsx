@@ -26,12 +26,10 @@ export default function About() {
         <span className="italic">My favorite part of programming</span> is the
         building something . I <span className="underline">love</span> the
         feeling of finally completing the project{' '}
-        <span className="font-medium">
-          with React
-        </span>
-        . I am also familiar with TypeScript and react query. I am always
-        looking to learn new technologies. I am currently looking for a{' '}
-        <span className="font-medium">Full-time position</span> as a software
+        <span className="font-medium">with React</span>. I am also working
+        recently with TypeScript and react query. I am always looking to learn
+        new technologies. I am currently looking for a{' '}
+        <span className="font-medium">Full-time position</span> as a Front end
         developer.
       </p>
 
@@ -40,7 +38,8 @@ export default function About() {
         video games, watching movies and anime, and playing with my cats. I also
         enjoy <span className="font-medium">learning new things</span>. I am
         currently learning about{' '}
-        <span className="font-medium">type script</span>. I'm also learning Japanese and playing guitar
+        <span className="font-medium">type script</span>. I'm also learning
+        Japanese and playing guitar
       </p>
     </motion.section>
   );
