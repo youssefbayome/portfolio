@@ -1,14 +1,14 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 type ProjectProps = {
   title: string;
   description: string;
-  tags: string[];
-  imageUrl: string;
+  tags: readonly string[];
+  imageUrl: StaticImageData;
   url?: string;
 };
 
@@ -74,5 +74,11 @@ export default function Project({
     </motion.div>
   );
 
-  return url ? <Link href={url} target='_blank' >{projectContent}</Link> : projectContent;
+  return url ? (
+    <Link href={url} target="_blank">
+      {projectContent}
+    </Link>
+  ) : (
+    projectContent
+  );
 }

@@ -61,14 +61,13 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
-
   {
     title: 'Internal HR system',
     description:
       'I worked as a front end developer on Gemini media projects for 1 and half year. Users with diffrent autorization can perform diffrent operations.',
     tags: ['React', 'Redux tool-kit', 'Tailwind'],
     imageUrl: corpcommentImg,
-    // url: '',
+    url: '',
   },
   {
     title: 'Masrawy mobile application',
