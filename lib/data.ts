@@ -35,11 +35,11 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: 'Graduated from full stack course with PHP and JavaScript',
+    title: 'Graduated from Business Information system Helwan University',
     location: 'Cairo',
     description: '',
     icon: React.createElement(LuGraduationCap),
-    date: 'Jan 2020 - Aug 2020',
+    date: 'Jan 2018 - Aug 2022',
   },
   {
     title: 'Graduated from MERN stack Course',
@@ -61,6 +61,13 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: 'Masrawy mobile application',
+    description:
+      'Masrawy is one of the biggest news platform in the middle east. I was the front-end developer in team of 2 developers.',
+    tags: ['React', 'React Native', 'Redux', 'Rest APIs', 'React Navigation'],
+    imageUrl: masrawy,
+  },
   {
     title: 'Internal HR system',
     description:
