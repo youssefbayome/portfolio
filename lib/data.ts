@@ -61,13 +61,7 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
-  {
-    title: 'Masrawy mobile application',
-    description:
-      'Masrawy is one of the biggest news platform in the middle east. I was the front-end developer in team of 2 developers.',
-    tags: ['React', 'React Native', 'Redux', 'Rest APIs', 'React Navigation'],
-    imageUrl: masrawy,
-  },
+
   {
     title: 'Internal HR system',
     description:
