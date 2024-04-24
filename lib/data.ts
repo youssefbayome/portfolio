@@ -5,7 +5,8 @@ import { LuGraduationCap } from 'react-icons/lu';
 import corpcommentImg from '@/public/corpcomment.png';
 import masrawy from '@/public/masrawy.png';
 import wordanalyticsImg from '@/public/mei.png';
-
+import masrawyWeb from '@/images/projects/MasrawyLogo.jpg';
+import yallKora from '@/images/projects/yallakora.jpg';
 export const links = [
   {
     name: 'Home',
@@ -62,12 +63,20 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: 'Internal HR system',
+    title: 'Yalla Kora',
     description:
-      'I worked as a front end developer on Gemini media projects for 1 and half year. Users with diffrent autorization can perform diffrent operations.',
-    tags: ['React', 'Redux tool-kit', 'Tailwind'],
-    imageUrl: corpcommentImg,
-    url: '',
+      'YallaKora is one of the BIGGEST Sports News platform in the middle east.',
+    tags: ['MVC', 'Java script', 'JQuery', 'HTML', 'CSS', 'ADS'],
+    imageUrl: yallKora,
+    url: 'https://www.yallakora.com/',
+  },
+  {
+    title: 'Masrawy',
+    description:
+      'Masrawy is one of the BIGGEST News platform in the middle east.',
+    tags: ['MVC', 'Java script', 'JQuery', 'HTML', 'CSS', 'ADS'],
+    imageUrl: masrawyWeb,
+    url: 'https://www.masrawy.com/',
   },
   {
     title: 'Masrawy mobile application',
@@ -76,6 +85,14 @@ export const projectsData = [
     tags: ['React', 'React Native', 'Redux', 'Rest APIs', 'React Navigation'],
     imageUrl: masrawy,
     url: 'https://play.google.com/store/apps/details?id=com.gemini.masrawyapp&pcampaignid=web_share',
+  },
+  {
+    title: 'Internal HR system',
+    description:
+      'I worked as a front end developer on Gemini media projects for 1 and half year. Users with diffrent autorization can perform diffrent operations.',
+    tags: ['React', 'Redux tool-kit', 'Tailwind'],
+    imageUrl: corpcommentImg,
+    url: '',
   },
   {
     title: 'MEI',
@@ -87,17 +104,17 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  'HTML',
-  'CSS',
   'JavaScript',
   'TypeScript',
   'React',
   'React Native',
   'Next.js',
   'Node.js',
+  'Redux',
+  'Express',
+  'HTML',
+  'CSS',
   'Git',
   'Tailwind',
   'MongoDB',
-  'Redux',
-  'Express',
 ] as const;

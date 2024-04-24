@@ -26,10 +26,10 @@ export default function Project({
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
+  const isPrivate = url === '';
   const projectContent = (
     <motion.div
-      title="Private"
+      title={`${isPrivate ? 'Private' : title}`}
       ref={ref}
       style={{
         scale: scaleProgess,
