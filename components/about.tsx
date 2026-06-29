@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React from 'react';
-import SectionHeading from './section-heading';
-import { motion } from 'framer-motion';
-import { useSectionInView } from '@/lib/hooks';
+import React from "react";
+import SectionHeading from "./section-heading";
+import { motion } from "framer-motion";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  const { ref } = useSectionInView('About');
+  const { ref } = useSectionInView("About");
 
   return (
     <motion.section
@@ -15,31 +15,45 @@ export default function About() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
-      id="about">
+      id="about"
+    >
       <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
-        After graduating with a degree in{' '}
-        <span className="font-medium">Business informatics</span>, I decided to
-        pursue my passion for programming. I enrolled in a Full stack php course
-        and learned{' '}
-        <span className="font-medium">full-stack web development</span>.{' '}
-        <span className="italic">My favorite part of programming</span> is the
-        building something . I <span className="underline">love</span> the
-        feeling of finally completing the project{' '}
-        <span className="font-medium">with React</span>. I am also working
-        recently with TypeScript and react query. I am always looking to learn
-        new technologies. I am currently looking for a{' '}
-        <span className="font-medium">Full-time position</span> as a Front end
-        developer.
+      <p className="mb-6">
+        My journey into software development started with a degree in{" "}
+        <span className="font-semibold">Business Informatics</span>, where I
+        discovered my passion for building digital products. Since then, I've
+        grown into a <span className="font-semibold">Front-End Engineer</span>{" "}
+        with over{" "}
+        <span className="font-semibold">
+          3 years of professional experience
+        </span>
+        , developing modern web and mobile applications using{" "}
+        <span className="font-semibold">
+          React, Next.js, React Native, TypeScript, and Node.js
+        </span>
+        .
+      </p>
+
+      <p className="mb-6">
+        Throughout my career, I've contributed to{" "}
+        <span className="font-semibold">
+          large-scale production applications
+        </span>
+        , collaborated with cross-functional teams, and recently built an{" "}
+        <span className="font-semibold">
+          AI-powered menu translation platform 
+        </span>
+         {" "}from the ground up. I enjoy transforming complex ideas into intuitive,
+        responsive, and high-performance user experiences while continuously
+        learning new technologies and best practices.
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies and anime, and playing with my cats. I also
-        enjoy <span className="font-medium">learning new things</span>. I am
-        currently learning about{' '}
-        <span className="font-medium">type script</span>. I'm also learning
-        Japanese and playing guitar
+        Outside of work, you'll usually find me studying{" "}
+        <span className="font-semibold">Japanese</span>, exploring new
+        technologies, going to the gym, playing guitar, watching movies or
+        anime, and occasionally spending time gaming. I'm always looking for
+        opportunities to grow both as a developer and as a person.
       </p>
     </motion.section>
   );
