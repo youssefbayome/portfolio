@@ -5,8 +5,6 @@ import { Resend } from 'resend';
 import { validateString, getErrorMessage } from '@/lib/utils';
 import ContactFormEmail from '@/email/contact-form-email';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get('senderEmail');
   const message = formData.get('message');
@@ -22,9 +20,14 @@ export const sendEmail = async (formData: FormData) => {
     };
   }
 
-  let data;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  if (!apiKey) {
+    return { error: 'Email service is not configured' };
+  }
+
   try {
-    data = await resend.emails.send({
+    const resend = new Resend(apiKey);
+    const { data, error } = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
       to: 'yousef.bayome258@gmail.com',
       subject: 'Message from your portfolio',
@@ -34,13 +37,16 @@ export const sendEmail = async (formData: FormData) => {
         senderEmail: senderEmail,
       }),
     });
+
+    if (error) {
+      return { error: error.message };
+    }
+
+    return { data };
   } catch (error: unknown) {
     return {
       error: getErrorMessage(error),
     };
   }
 
-  return {
-    data,
-  };
 };
