@@ -86,6 +86,13 @@ export const experiencesData = [
     icon: React.createElement(IoCodeSlashOutline),
     date: '2025 - Present',
   },
+  {
+    title: 'Software Engineer at HCL Japan',
+    location: 'Tokyo',
+    description: '',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Nov 2026 - Present',
+  },
 ] as const;
 export const projectsData = [
   {

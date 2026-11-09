@@ -25,7 +25,7 @@ export default function About() {
         grown into a <span className="font-semibold">Front-End Engineer</span>{" "}
         with over{" "}
         <span className="font-semibold">
-          3 years of professional experience
+          4+ years of professional experience
         </span>
         , developing modern web and mobile applications using{" "}
         <span className="font-semibold">
@@ -41,9 +41,9 @@ export default function About() {
         </span>
         , collaborated with cross-functional teams, and recently built an{" "}
         <span className="font-semibold">
-          AI-powered menu translation platform 
+          AI-powered menu translation platform
         </span>
-         {" "}from the ground up. I enjoy transforming complex ideas into intuitive,
+        {" "}from the ground up. I enjoy transforming complex ideas into intuitive,
         responsive, and high-performance user experiences while continuously
         learning new technologies and best practices.
       </p>
