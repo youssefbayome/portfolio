@@ -1,58 +1,49 @@
 'use client';
 
-import React from 'react';
 import SectionHeading from './section-heading';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import { experiencesData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
-import { useTheme } from '@/context/theme-context';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function Experience() {
   const { ref } = useSectionInView('Experience');
-  const { theme } = useTheme();
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+      <p className="section-kicker mb-3">THE PATH SO FAR</p>
       <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
+      <ol className="experience-list">
         {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              contentStyle={{
-                background:
-                  theme === 'light' ? '#f3f4f6' : 'rgba(255, 255, 255, 0.05)',
-                boxShadow: 'none',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
-                textAlign: 'left',
-                padding: '1.3rem 2rem',
-                margin: '0 1rem',
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === 'light'
-                    ? '0.4rem solid #9ca3af'
-                    : '0.4rem solid rgba(255, 255, 255, 0.5)',
-              }}
-              date={item?.date}
-              icon={item?.icon}
-              iconStyle={{
-                background:
-                  theme === 'light' ? 'white' : 'rgba(255, 255, 255, 0.15)',
-                fontSize: '1.5rem',
-              }}>
-              <h3 className="font-semibold capitalize">{item?.title}</h3>
-              <p className="font-normal !mt-0">{item?.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                {item?.description}
-              </p>
-            </VerticalTimelineElement>
-          </React.Fragment>
+          <motion.li
+            className="experience-item"
+            key={`${item.title}-${item.date}`}
+            initial={prefersReducedMotion ? false : { opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.45, delay: prefersReducedMotion ? 0 : index * 0.08, ease: 'easeOut' }}
+          >
+            <motion.div
+              className="experience-marker"
+              aria-hidden="true"
+              initial={prefersReducedMotion ? false : { scale: 0.75 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ type: 'spring', stiffness: 320, damping: 22, delay: prefersReducedMotion ? 0 : index * 0.08 }}
+            >{item.icon}</motion.div>
+            <motion.article
+              className="experience-card"
+              whileHover={prefersReducedMotion ? undefined : { y: -3 }}
+              transition={{ duration: 0.2 }}
+            >
+              <p className="experience-date">{item.date}</p>
+              <h3>{item.title}</h3>
+              <p className="experience-location">{item.location}</p>
+              {item.description && <p className="experience-description">{item.description}</p>}
+            </motion.article>
+          </motion.li>
         ))}
-      </VerticalTimeline>
+      </ol>
     </section>
   );
 }
